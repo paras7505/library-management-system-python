@@ -12,12 +12,13 @@ class Book(Base):
     isbn = Column(String,nullable=False)
     count = Column(Integer, nullable=False,default=1)
 
-
+ 
 class Member(Base):
     __tablename__ = "member"
     id = Column(Integer,primary_key=True)
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
+    
 
 
 class Transaction(Base):
@@ -29,5 +30,5 @@ class Transaction(Base):
     return_data = Column(Date, nullable=True)
 
 
-    book = relationship("Book") # used to make foreign key relstionship
-    member = relationship('Member')
+    book = relationship("Book") # used to make foreign key relationship 
+    member = relationship('Member') 
